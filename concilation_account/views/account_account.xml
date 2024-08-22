@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="account_view_tree"
+        name="Plan de Cuentas"
+        action="account.action_account_form"
+        parent="account.menu_analytic__distribution_model"
+        sequence="10"/>
+
+</odoo>
+

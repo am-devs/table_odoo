@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="autoextract_job" model="ir.cron">
+            <field name="name">Actualización de Extractos Bancarios</field>
+            <field name="model_id" ref="model_account_journal"/>
+            <field name="state">code</field>
+            <field name="code">model.get_status_account()</field>
+            <field name='interval_number'>24</field>
+            <field name='interval_type'>hours</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+
+    </odoo>

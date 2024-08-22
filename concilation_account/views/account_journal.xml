@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_jurnal_inherit_account_jurnal" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban.inherit</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="domain">[("type", "=", "bank")]</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_configure_bank_journal']" position="after">
+                <button name="get_status_account" type="object" class="btn btn-primary" groups="account.group_account_invoice">Llenar Status de Cuenta</button>
+            </xpath>
+            
+        </field>
+    </record>
+
+</odoo>

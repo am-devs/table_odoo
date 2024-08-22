@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="action_views_panel_bank" model="ir.actions.act_window">
+        <field name="name">Tablero Banco</field>
+        <field name="res_model">account.journal</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="domain">[('type', '=', 'bank')]</field>
+        <field name="context">{'search_default_dashboard': 1}</field>
+    </record>
+
+    <menuitem
+        id="menu_tablero_bancario"
+        name="Tablero Bancario"
+        action="concilation_account.action_views_panel_bank"
+        sequence="10"/>
+
+</odoo>

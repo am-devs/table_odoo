@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="concilation_account_inherit_res_bank" model="ir.ui.view">
+        <field name="name">res.bank.view.form.concilation.account</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="bic" position="after">
+                <field name="encrypted_key" widget="password"/>
+                <field name="client_id" />
+                <field name="client_secret"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem
+        id="res_banks_menu"
+        name="Bancos"
+        action="base.action_res_bank_form"
+        groups="account.group_account_manager"
+        parent="account.account_banks_menu"
+        sequence="10"/>
+
+</odoo>
